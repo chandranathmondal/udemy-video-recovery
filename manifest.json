@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Udemy Video Recovery",
+  "version": "1.0.0",
+  "description": "Automatically detects when a Udemy video stalls behind a pop-up, then reloads the page and resumes from 5 seconds before where it stopped. No controls, fully automatic.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://*.udemy.com/*"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.udemy.com/course/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
